@@ -3,10 +3,14 @@
 
 import os
 import random
+os.system('cls')
 def updateword(word, guesses):
     for letter in word:
         if letter in guesses:
-            print('_', end=' ')
+            print(letter, end=' ')
+        else:
+            print('_',end=' ')
+            
 
 def menu():
     print("#########################################")
@@ -34,31 +38,35 @@ def selword(sel):
 
 animals=["tiger", "sloth","dolphin"]
 Fruits=["banana","pinneapple","orange","strawberry"]
-bakinging=["flour","egg","sugar","milk","butter","cream"]
+bakinging=["flour","nuts","sugar","milk","oil","cream"]
 name= input("what is your name?")
 
 counter=0
+
 sel=menu()
 while sel !=4:
     print(name+" Good luck you have 5 chances :)")
-    turns=5
-    counter+=1
+    counter=0
     word=selword(sel)
     word=word.lower()
     wordcount=len(word)
     letcount = 0
+    turns=5
     print(word) #checking code
     guesses=''
     updateword(word, guesses)
-
-    while turns>0 and letcount<=wordcount:
-       newguess=input(name+" give me a letter")
-    if newguess in word:
+    newguess=''
+    while turns>0 and counter<=len(word):
+        print()
+        newguess=input(name+" give me a letter")
+        if newguess in word:
             guesses+=newguess
             print("you guessed one")
-    else:
+            counter+=1
+        else:
             turns-=1
             print("sorry, you have ", turns, " turns left")
-    updateword(word, guesses)
-os.system('cls')
-sel=menu()
+        updateword(word, guesses)
+    counter==len(word) or print("you won")
+    sel=menu()
+print("Thank you for playing")
