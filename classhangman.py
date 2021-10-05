@@ -67,6 +67,10 @@ while sel !=4:
             turns-=1
             print("sorry, you have ", turns, " turns left")
         updateword(word, guesses)
-    counter==len(word) or print("you won")
+    if turns == 0:
+        print("you lost")
+    else:
+        print("you won")
+
     sel=menu()
 print("Thank you for playing")
