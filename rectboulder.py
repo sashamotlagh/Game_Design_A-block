@@ -27,8 +27,8 @@ left = False
 right = False
 walkCount = 0
 clock= pygame.time.Clock()
-x=50
-y=400
+x=20 #50
+y=600 #400
 vel = 5
 width = 40
 height = 60
@@ -51,10 +51,10 @@ pygame.display.set_caption('MY SHAPES')
 screen.blit(bg, (0,0))
 pygame.display.flip()
 pygame.time.delay(1000)
+print(pygame.mouse.get_pos)
 run = True
 while run:
     clock.tick(27)
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -71,7 +71,6 @@ while run:
         left = False
         right = False
         walkCount = 0
-        
     if not(isJump):
         if keys[pygame.K_SPACE]:
             isJump = True
@@ -85,5 +84,10 @@ while run:
         else: 
             jumpCount = 10
             isJump = False
+    # if x==50 and y==400:
+    #     if jumpCount>=10:
+
+    #     break 
+    print(pygame.mouse.get_pos)
     redrawGameWindow() 
 pygame.quit()
