@@ -232,9 +232,10 @@ def SettingMenuWin(xm,ym):
         SETTINGS = False             
 
 def Menu_Back():
-    win.fill(COLOR)
-    display_Title("MAIN", 50)
+    win.blit(bg1,(0,0))
+    display_Title("Menu", 70)
     Menu_function(mainMenu)
+    display_Title("Back", HEIGHT-50)
     pygame.display.update()
 def Setting_Back():
     win.blit(bg1,(0,0))
@@ -536,44 +537,81 @@ while run:
             if LEVEL1: #letters:D,E,R,H,S,Q,U,I,D,C,A,K,G,A,N,R
                 game_Level1()
                 chances=0
-                squish=[S,Q,U,I,S,H]
-                #if the press is correct
-                #fix all of the buttons coordinates for thisa
-                if xm>=300 and xm<=400 and ym>=450 and ym<=570:
-                         win.blit(RIGHT, (300,450))
-                if xm>=540 and xm<=680 and ym>=450 and ym<=590:
-                         win.blit(RIGHT, (560,450))
-                if xm>=790 and xm<=910 and ym>=450 and ym<=590:
-                         win.blit(RIGHT, (790,450))
-                if xm>=1040 and xm<=1140 and ym>=450 and ym<=570:
-                         win.blit(RIGHT, (1040,450))
-                if xm>=1280 and xm<=1380 and ym>=450 and ym<=570:
-                         win.blit(RIGHT, (1280,450))
-                if xm>=90 and xm<=190 and ym>=700 and ym<=920:
-                        win.blit(RIGHT, (90,700))
-                if xm>=300 and xm<=400 and ym>=700 and ym<=920:
-                         win.blit(RIGHT, (300,700))
-                if xm>=550 and xm<=650 and ym>=700 and ym<=920:
-                       win.blit(RIGHT, (560,700))
-                if xm>=790 and xm<=890 and ym>=700 and ym<=920:
-                        win.blit(RIGHT, (790,700))
-                if xm>=1040 and xm<=1140 and ym>=700 and ym<=920:
-                         win.blit(RIGHT, (1040,700))
-                if xm>=1280 and xm<=1380 and ym>=700 and ym<=920:
-                         win.blit(RIGHT, (1280,700))
-                #now for the wrong buttons
-                if xm>=90 and xm<=190 and ym>=450 and ym<=570:
-                         win.blit(WRONG, (90,450))
-                if xm>=300 and xm<=400 and ym>=450 and ym<=570:
-                         win.blit(WRONG, (300,450))
-                if chances==3:
-                    win.blit(WRONG,(WIDTH/2,HEIGHT/2))
+                score=0
 
+
+                for s in words_easy:
+                    if xm>=30 and xm<=130 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (30,300))
+                            chances+=1
+                    if xm>=190 and xm<=290 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (190,300))
+                            chances+=1
+                    if xm>=350 and xm<=450 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (510,300))
+                            chances+=1
+                    if xm>=510 and xm<=610 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (510,300))
+                            chances+=1
+                    if xm>=670 and xm<=770 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (670,300))
+                            chances+=1
+                    if xm>=830 and xm<=930 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (830,300))
+                            chances+=1
+                    if xm>=990 and xm<=1090 and ym>=700 and ym<=920:
+                            win.blit(WRONG, (990,300))
+                            chances+=1
+                    if xm>=1150 and xm<=1250 and ym>=700 and ym<=920:
+                            win.blit(WRONG, (1150,300))
+                            chances+=1
+                    if xm>=1310 and xm<=1410 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (1310,300))
+                            chances+=1
+
+                    if xm>=30 and xm<=130 and ym>=500 and ym<=600:
+                            win.blit(WRONG, (30,500))
+                            chances+=1
+                    if xm>=190 and xm<=290 and ym>=500 and ym<=600:
+                            win.blit(WRONG, (190,500))
+                            chances+=1
+                    if xm>=350 and xm<=450 and ym>=500 and ym<=600:
+                            win.blit(WRONG, (510,500))
+                            chances+=1
+                    if xm>=1040 and xm<=1140 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (670,500))
+                    if xm>=1280 and xm<=1380 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (830,500))
+                    if xm>=90 and xm<=190 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (990,500))
+                    if xm>=300 and xm<=400 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (1150,500))
+                    if xm>=550 and xm<=650 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (1310,500))
+                    
+                    if xm>=30 and xm<=130 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (30,300))
+                            chances=0
+                    if xm>=190 and xm<=290 and ym>=300 and ym<=400:
+                            win.blit(WRONG, (190,300))
+                    if xm>=350 and xm<=450 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (510,300))
+                    if xm>=1040 and xm<=1140 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (670,750))
+                    if xm>=1280 and xm<=1380 and ym>=300 and ym<=400:
+                            win.blit(RIGHT, (830,700))
+                    if xm>=90 and xm<=190 and ym>=700 and ym<=920:
+                            win.blit(RIGHT, (990,700))
+                    if xm>=300 and xm<=400 and ym>=700 and ym<=920:
+                            win.blit(RIGHT, (1150,300))
+                    if xm>=550 and xm<=650 and ym>=700 and ym<=920:
+                            win.blit(RIGHT, (1310,700))
+
+                    if chances==3:
+                        win.blit(WRONG,(WIDTH/2,HEIGHT/2))
                 scoreBoard()
-
                 #game_Level1()
                 if xm >WIDTH-400 and xm<WIDTH-350 and ym>745 and ym<795:
-                    win.blit("Back",(200,745))
                     Menu_Back()
                     MAINMENU = True
                     LEVEL1 = False
