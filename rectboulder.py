@@ -14,12 +14,6 @@ colors = {'black':(0,0,0), 'red':(255,0,0), 'green':(0,255,0), 'blue':(0,0,145),
 white= [255,255,255]
 red= [255,0,0]
 blue= [0,0,255]
-# wbox=30
-# hbox=30
-# x=30
-# y=130
-# width=40
-# height=60
 spd=5
 isJump = False
 jumpCount = 5
@@ -27,11 +21,17 @@ left = False
 right = False
 walkCount = 0
 clock= pygame.time.Clock()
-x=20 #50
-y=600 #400
+x=50 #50
+y=400 #400
 vel = 5
 width = 40
 height = 60
+OsX = [129,194,236,300,391]
+BrX = 50
+BrX2 = OsX[0]
+PlY = 356-height
+PlY2 = 254-height
+
 def redrawGameWindow():
     global walkCount
     screen.blit(bg, (0,0))  
@@ -52,6 +52,9 @@ screen.blit(bg, (0,0))
 pygame.display.flip()
 pygame.time.delay(1000)
 print(pygame.mouse.get_pos)
+count = 0
+count1 = 1
+count2 = 2
 run = True
 while run:
     clock.tick(27)
@@ -59,6 +62,7 @@ while run:
         if event.type == pygame.QUIT:
             run = False
     keys = pygame.key.get_pressed()
+
     if keys[pygame.K_LEFT] and x > vel: 
         x -= vel
         left = True
@@ -84,10 +88,27 @@ while run:
         else: 
             jumpCount = 10
             isJump = False
-    # if x==50 and y==400:
-    #     if jumpCount>=10:
-
-    #     break 
-    print(pygame.mouse.get_pos)
+    if not(isJump):
+        if keys[pygame.K_SPACE]:
+            isJump = True
+            left = False
+            right = False
+            walkCount = 0
+    else:
+        if jumpCount >= -10:
+            y -= (jumpCount * abs(jumpCount)) * 0.25
+            jumpCount -= 1
+            if x>OsX[count] and y >= PlY:
+                isJump = False
+                jumpCount = 10
+                BorX = OsX[count1]
+                BorX2 = OsX[count2]
+                count+=1
+                count1+=1
+                count2+=1
+                PlY = PlY2
+        else: 
+            jumpCount = 10
+            isJump = False
     redrawGameWindow() 
 pygame.quit()

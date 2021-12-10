@@ -31,13 +31,12 @@ def display_title(menu_message):
     window.blit(text, (WIDTH/2 - text.get_width()/2, 70))
     pygame.display.flip()
     pygame.time.delay(100)
-def display_subtitle(message, x, y):
+def display_subtitle(messages, x, y):
     pygame.time.delay(100)
-    text = subtitle_font.render(message, 1, BLACK)
+    text = subtitle_font.render(messages, 1, BLACK)
     window.blit(text, (x, y))
     pygame.display.flip()
     pygame.time.delay(100)
-
 def display_Menu(messages):
     x=70
     y=190
