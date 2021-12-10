@@ -180,7 +180,7 @@ def MainMenuWin(xm,ym):
         LEVEL1 = True
     if xm>=70 and  xm<=95 and ym>=450 and ym<=475: #71, 193. 93,193. 93, 212. 71, 211
         win.blit(bg1,(0,0))
-        pygame.display.set_caption("Gay")
+        pygame.display.set_caption("Game")
         display_Title("GUARD",  70)
         display_Title("Back", HEIGHT-50)
         pygame.display.update()
