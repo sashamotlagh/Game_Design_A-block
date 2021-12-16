@@ -89,6 +89,9 @@ text= TITLE_FONT.render('message',1,ORANGE)
 #New window title
 #images
 #Function to print Titles to all screens
+myFile=open('instructions.txt','w')
+myFile.close()
+
 def display_Title(message,ym):
     pygame.time.delay(100)
     text= TITLE_FONT.render(message,1,ORANGE)
@@ -527,11 +530,11 @@ while run:
                          win.blit(WRONG, (990,300))
                          chances+=1
                 if xm>=1150 and xm<=1250 and ym>=700 and ym<=920:
-                         win.blit(WRONG, (1150,300))
-                         chances+=1
+                         win.blit(RIGHT, (1150,300))
+                         score+=2
                 if xm>=1310 and xm<=1410 and ym>=300 and ym<=400:
-                         win.blit(WRONG, (1310,300))
-                         chances+=1
+                         win.blit(RIGHT, (1310,300))
+                         score+=2
                 if xm>=30 and xm<=130 and ym>=500 and ym<=600:
                          win.blit(WRONG, (30,500))
                          chances+=1
@@ -541,24 +544,27 @@ while run:
                 if xm>=350 and xm<=450 and ym>=500 and ym<=600:
                          win.blit(WRONG, (350,500))
                          chances+=1
-                if xm>=350 and xm<=450 and ym>=500 and ym<=600:
+                if xm>=510 and xm<=450 and ym>=500 and ym<=600:
                          win.blit(WRONG, (510,500))
                          chances+=1
                 if xm>=1040 and xm<=1140 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (670,500))
+                         win.blit(RIGHT, (1040,500))
                          score+=2
                 if xm>=1280 and xm<=1380 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (830,500))
+                         win.blit(RIGHT, (1280,500))
                          score+=2
-                if xm>=90 and xm<=190 and ym>=300 and ym<=400:
+                if xm>=30 and xm<=130 and ym>=700 and ym<=800:
+                         win.blit(RIGHT, (30,700))
+                         score+=2
+                if xm>=190 and xm<=290 and ym>=700 and ym<=800:
                          win.blit(RIGHT, (990,500))
                          score+=2
-                if xm>=300 and xm<=400 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (1150,500))
+                if xm>=300 and xm<=400 and ym>=700 and ym<=800:
+                         win.blit(RIGHT, (300,700))
                          score+=2
-                if xm>=550 and xm<=650 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (1310,500))
-                         score+=2
+                if xm>=550 and xm<=650 and ym>=700 and ym<=800:
+                         win.blit(WRONG, (1310,500))
+                         chances+=1
                 if xm>=30 and xm<=130 and ym>=300 and ym<=400:
                          win.blit(RIGHT, (30,300))
                          score+=2
@@ -569,11 +575,11 @@ while run:
                          win.blit(RIGHT, (510,300))
                          score+=2
                 if xm>=1040 and xm<=1140 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (670,750))
-                         score+=2
+                         win.blit(WRONG, (670,750))
+                         chances+=1
                 if xm>=1280 and xm<=1380 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (830,700))
-                         score+=2
+                         win.blit(WRONG, (830,700))
+                         chances+=1
                 if xm>=90 and xm<=190 and ym>=700 and ym<=920:
                          win.blit(RIGHT, (990,700))
                          score+=2
@@ -581,8 +587,8 @@ while run:
                          win.blit(RIGHT, (1150,300))
                          score+=2
                 if xm>=550 and xm<=650 and ym>=700 and ym<=920:
-                         win.blit(RIGHT, (1310,700))
-                         score+=2
+                         win.blit(WRONG, (1310,700))
+                         chances+=1
 
                 if chances==3:
                         win.blit(WRONG,(WIDTH/2,HEIGHT/2))
@@ -637,14 +643,17 @@ while run:
                 if xm>=350 and xm<=450 and ym>=500 and ym<=600:
                          win.blit(WRONG, (510,500))
                          chances+=1
-                if xm>=1040 and xm<=1140 and ym>=300 and ym<=400:
+                if xm>=1040 and xm<=1140 and ym>=500 and ym<=600:
                          win.blit(RIGHT, (670,500))
                          score+=2
-                if xm>=1280 and xm<=1380 and ym>=300 and ym<=400:
+                if xm>=1280 and xm<=1380 and ym>=500 and ym<=600:
                          win.blit(RIGHT, (830,500))
                          score+=2
-                if xm>=90 and xm<=190 and ym>=300 and ym<=400:
-                         win.blit(RIGHT, (990,500))
+                if xm>=1310 and xm<=1410 and ym>=500 and ym<=600:
+                         win.blit(WRONG,(1310,500))
+                         chances+=1
+                if xm>=190 and xm<=290 and ym>=300 and ym<=400:
+                         win.blit(RIGHT, (190,500))
                          score+=2
                 if xm>=300 and xm<=400 and ym>=300 and ym<=400:
                          win.blit(RIGHT, (1150,500))
